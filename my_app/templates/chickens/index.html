@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/chickens/chicken-index.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+<section class="hero-chickens">
+    <h1>Cluckin’ Around 🐓</h1>
+    <div class="hero-images">
+        <img src="{% static 'images/chicken1.png' %}" alt="Fancy chicken showing off" />
+        <img src="{% static 'images/chicken2.png' %}" alt="Angry chicken judging your life" />
+        <img src="{% static 'images/chicken3.png' %}" alt="Chicken stuck in a bucket" />
+        <img src="{% static 'images/chicken4.png' %}" alt="Hipster chicken sipping corn juice" />
+    </div>
+</section>
+
+<section class="chicken-cards">
+    {% for chicken in chickens %}
+    <div class="card">
+        <a href="{% url 'chicken-detail' chicken.id %}">
+            <div class="card-image">
+                <img src="{% static 'images/angry-chicken.png' %}" alt="Chicken doing nothing useful" />
+            </div>
+            <div class="card-text">
+                <h2>{{ chicken.name }}</h2>
+                <p>{% if chicken.age > 0 %}A {{ chicken.age }} year old {{ chicken.breed }} (probably plotting something).{% else %}An innocent baby chick pretending to be cute.{% endif %}</p>
+                <p class="description">{{ chicken.description }}</p>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/chickens/chicken-detail.css' %}" />
+{% endblock %}
+{% block content %}
+
+<section class="chicken-container">
+  <div class="chicken-img">
+    <img src="{% static 'images/sk8r-boi-chicken.png' %}" alt="A rebellious skater chicken" />
+  </div>
+
+  <div class="chicken-details">
+    <h1>{{ chicken.name }}</h1>
+
+    {% if chicken.age > 0 %}
+      <h2>A {{ chicken.age }} year old {{ chicken.breed }} (probably plotting your demise)</h2>
+    {% else %}
+      <h2>A tiny chick just learning to terrorize humans.</h2>
+    {% endif %}
+
+    <p>{{ chicken.description }}</p>
+
+    <div class="chicken-actions">
+    <a href="{% url 'chicken-update' chicken.id %}" class="btn warn">Mess with It</a>
+    <a href="{% url 'chicken-delete' chicken.id %}" class="btn danger">Send to KFC</a>
+
+    <h3>Chaos Meter</h3>
+    <p>Currently at: <strong>{{ chicken.chaos_level }}%</strong></p>
+
+    <h3>Favorite Snacks</h3>
+    {% if chicken.snacks %}
+      <ul>
+        {% for snack in chicken.snacks %}
+          <li>{{ snack }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>This chicken is fasting… or just lazy.</p>
+    {% endif %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/Chicken.png' %}" />
+    <title>Chicken Master 🐓</title>
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <header>
+      <div class="header-logo-container">
+        <a href="/">
+          <img src="{% static 'images/Chicken.png' %}" alt="The Chicken Master Logo" />
+        </a>
+        <p class="tagline">Because humans needed more chicken content 🐔</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="{% url 'chicken-index' %}">All Chickens 🐓</a></li>
+          <li><a href="{% url 'chicken-create' %}">Add a New Chicken</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+      <p>© {{ now|date:"Y" }} Chicken Master – No chickens were harmed in the making of this website.<br />
+    Only humans... emotionally, mentally, and sometimes spiritually.<br /><br /></p>
+    </footer>
+  </body>
+</html>

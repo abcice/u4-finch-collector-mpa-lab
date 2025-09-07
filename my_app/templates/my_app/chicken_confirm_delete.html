@@ -1,0 +1,22 @@
+{% extends 'base.html' %}   
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/chicken-delete.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+  <h1>Send Chicken to KFC?</h1>
+  <img src="{% static 'images/KFC.png' %}" alt="A chicken looking extremely unimpressed" />
+</div>
+
+<h2>Are you really going to send {{ chicken.name }} to the fryer… I mean, delete them?</h2>
+
+<form action="" method="post" class="form">
+  {% csrf_token %}
+  <a href="{% url 'chicken-detail' chicken.id %}" class="btn secondary">Cancel (Spare the poor bird)</a>
+  <button type="submit" class="btn danger">Yes - Fry it! 🐔🔥</button>
+</form>
+
+{% endblock %}

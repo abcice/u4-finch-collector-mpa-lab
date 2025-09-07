@@ -1,0 +1,111 @@
+.chicken-container {
+  padding: 35px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fffbe6; /* soft egg color */
+  border: 2px dashed #f4c542; /* playful chaotic border */
+  border-radius: 15px;
+}
+
+.chicken-img {
+  width: 70%;
+  max-width: 350px;
+  animation: wobble 1s infinite;
+}
+
+.chicken-img img {
+  width: 100%;
+}
+
+@keyframes wobble {
+  0% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+  100% { transform: rotate(-5deg); }
+}
+
+.chicken-details {
+  width: 95%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.chicken-details h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #d9534f; /* chaotic red */
+}
+
+.chicken-details h2 {
+  font-size: 1.8rem;
+  margin: 5px 0 15px 0;
+  font-style: italic;
+  color: #f0ad4e; /* mischievous orange */
+}
+
+.chicken-details h3 {
+  margin: 15px 0 5px 0;
+  font-size: 1.4rem;
+  color: #5bc0de; /* fun blue */
+}
+
+.chicken-details p, .chicken-details ul {
+  font-size: 1.1rem;
+  margin: 5px 0 10px 0;
+}
+
+.chicken-actions {
+  margin-top: 20px;
+  padding: 15px;
+  border-top: 2px dashed #f4c542;
+}
+
+ul {
+  list-style-type: circle;
+  padding-left: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .chicken-container {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: start;
+  }
+
+  .chicken-img {
+    width: 30%;
+    max-width: 250px;
+    margin-right: 25px;
+  }
+
+  .chicken-details {
+    text-align: left;
+    width: 65%;
+  }
+}
+.chicken-actions .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 5px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.chicken-actions .btn:hover {
+  transform: rotate(-3deg) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.btn.warn {
+  background-color: #f0ad4e; /* mischievous orange */
+  color: #fff;
+}
+
+.btn.danger {
+  background-color: #d9534f; /* chaotic red */
+  color: #fff;
+}
+

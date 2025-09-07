@@ -1,0 +1,110 @@
+/* ===== Hero Section ===== */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, #fffaf0, #ffe4c4);
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+.hero-chickens {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.hero-chickens img {
+    height: 140px;
+    width: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-chickens img:hover {
+    transform: rotate(-7deg) scale(1.2);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.hero-title {
+    font-size: 4rem;
+    color: #dc141e;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px #aaa;
+}
+
+.hero-tagline {
+    font-size: 1.8rem;
+    color: #2474f8;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 1.7rem;
+    color: #fff;
+    background-color: #dc141e;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.hero-btn:hover {
+    background-color: #a01014;
+    transform: scale(1.08);
+}
+
+/* ===== Fun Facts Section ===== */
+.fun-facts {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #fefefe;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.fun-facts h2 {
+    font-size: 3rem;
+    color: #dc141e;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.facts-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+.fact {
+    font-size: 1.7rem;
+    color: #2474f8;
+    background: #fff4e6;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+/* ===== Responsive ===== */
+@media only screen and (min-width: 768px) {
+    .hero-chickens img { height: 170px; }
+    .hero-title { font-size: 4.5rem; }
+    .hero-tagline { font-size: 2rem; }
+    .facts-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media only screen and (min-width: 1024px) {
+    .hero-chickens img { height: 200px; }
+    .hero-title { font-size: 5rem; }
+    .hero-btn { font-size: 1.9rem; padding: 16px 32px; }
+    .facts-grid { grid-template-columns: repeat(2, 1fr); }
+}

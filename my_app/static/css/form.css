@@ -1,0 +1,99 @@
+/* Container for the whole form */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fff8e1; /* Light egg-yolk color */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Playful vibe */
+  gap: 20px;
+}
+
+/* Table spacing for form fields */
+table {
+  width: 100%;
+  border-spacing: 0 15px;
+  padding: 0 20px;
+}
+
+/* Table headers */
+th {
+  text-align: left;
+  padding: 6px 15px 0 0;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #e07b39; /* Fun chicken orange */
+}
+
+/* Table cells */
+td {
+  max-width: 70%;
+}
+
+/* Input fields styling */
+td > * {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 1rem;
+  border: 2px solid #e07b39;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus effect */
+td > *:focus {
+  border-color: #f2c14e;
+  background-color: #fff6d6;
+}
+
+/* Textarea styling */
+td > textarea {
+  height: calc(4 * 1rem + 12px);
+  font-family: inherit;
+  resize: vertical;
+}
+
+/* Submit button */
+.btn.submit {
+  align-self: flex-end;
+  margin-right: 20px;
+  background-color: #f2c14e; /* Golden yolk */
+  color: #6b4226; /* Dark brown for contrast */
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn.submit:hover {
+  background-color: #e07b39; /* Darker orange */
+  transform: scale(1.05);
+}
+
+/* Page header */
+.page-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.page-header h1 {
+  font-size: 1.8rem;
+  color: #e07b39;
+  margin-bottom: 10px;
+}
+
+.page-header img {
+  width: 150px;
+  height: auto;
+  transform: rotate(-5deg); /* Sarcastic tilt */
+}
+
+/* Optional playful text */
+.page-header h1::after {
+  content: " 🐔";
+}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="hero-chickens">
+        <img src="{% static 'images/chicken1.png' %}" alt="Fancy chicken" />
+        <img src="{% static 'images/chicken2.png' %}" alt="Judging chicken" />
+        <img src="{% static 'images/chicken3.png' %}" alt="Bucket chicken" />
+    </div>
+    <h1 class="hero-title">Welcome to Chicken Master 🐓</h1>
+    <p class="hero-tagline">Where chickens run the show and humans just watch. Brace yourself.</p>
+    <a href="{% url 'chicken-index' %}" class="btn hero-btn">Meet the Cluckin Crew</a>
+</section>
+
+<section class="fun-facts">
+    <h2>Why You’re Here</h2>
+    <div class="facts-grid">
+        <div class="fact">Chickens > everything else. Fact.</div>
+        <div class="fact">They secretly judge your life choices.</div>
+        <div class="fact">To provide pointless entertainment because why not?</div>
+        <div class="fact">Because the last cat website wasnt chaotic enough</div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+/* chicken-delete.css */
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  color: #d9534f; /* Danger red for KFC vibes */
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* playful sarcasm */
+  text-shadow: 2px 2px #f5f5f5;
+}
+
+.page-header img {
+  width: 180px;
+  height: auto;
+  margin-top: 1rem;
+  animation: shake 1s ease infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  50% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 2rem;
+  font-family: 'Verdana', sans-serif;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn.secondary {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.btn.danger {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.btn.danger:hover {
+  background-color: #c9302c;
+}

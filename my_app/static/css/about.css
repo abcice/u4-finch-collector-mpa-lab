@@ -1,0 +1,86 @@
+/* ===== About Page Container ===== */
+.page-content {
+  max-width: 900px;
+  margin: 40px auto;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  line-height: 2.4rem;
+  color: rgb(36, 116, 248);
+  padding: 20px 30px;
+  background: rgba(255, 250, 240, 0.7);
+  border-radius: 14px;
+  box-shadow: 2px 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* separates joke blocks */
+}
+
+/* Header for About Page */
+h1 {
+  font-size: 4.8rem;  /* largest: grabs attention immediately */
+  text-align: center;
+  color: rgb(220, 20, 30);
+  text-shadow: 2px 2px 4px #aaa;
+  margin-bottom: 20px;
+}
+
+/* Hierarchical Text Blocks */
+.page-content p {
+  font-size: 1.9rem;       /* main readable text */
+  margin: 0;
+}
+
+/* Break up jokes into smaller blocks */
+.page-content p span {
+  display: block;
+  font-size: 2.2rem;       /* slight variation to guide eyes */
+  font-weight: bold;       /* emphasize punchlines */
+  margin-bottom: 8px;
+  color: rgb(36, 116, 248);
+}
+
+/* Emphasize certain lines */
+.page-content p em {
+  font-size: 2.4rem;       /* bigger for ironic/sarcastic lines */
+  font-style: normal;
+  color: rgb(255, 102, 0);
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* Floating first letter for style */
+.page-content p::first-letter {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: rgb(255, 102, 0);
+  float: left;
+  margin-right: 8px;
+}
+
+/* Horizontal rules to separate sections */
+hr {
+  width: 60%;
+  border: 2px dashed rgb(36, 116, 248);
+  margin: 25px auto;
+}
+
+/* Slight animations to draw attention */
+.page-content p:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Responsive tweaks */
+@media only screen and (min-width: 768px) {
+  h1 { font-size: 5.2rem; }
+  .page-content p { font-size: 2rem; }
+  .page-content p span { font-size: 2.4rem; }
+  .page-content p em { font-size: 2.6rem; }
+}
+
+@media only screen and (min-width: 1024px) {
+  h1 { font-size: 5.6rem; }
+  .page-content p { font-size: 2.2rem; }
+  .page-content p span { font-size: 2.6rem; }
+  .page-content p em { font-size: 2.8rem; }
+}

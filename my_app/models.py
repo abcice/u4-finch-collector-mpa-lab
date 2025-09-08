@@ -8,6 +8,7 @@ class Chicken(models.Model):
     breed = models.CharField(max_length=100, help_text='e.g., Apocalypse Rooster, Galactic Hen, Drama Queen')
     description = models.TextField(max_length=250, help_text='Describe your chickens life philosophy in 250 words or less')
     age = models.IntegerField(help_text='Age of the chicken (in chicken years, or human years, who cares)')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.name} the {self.breed}'
@@ -26,3 +27,5 @@ class EscapeAttempt(models.Model):
 
     def __str__(self):
         return f"{self.chicken.name} tried '{self.method}' on {self.date} – {'Freedom!' if self.success else 'Epic fail'}"
+    class Meta:
+        ordering = ['-date']

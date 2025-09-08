@@ -108,3 +108,70 @@
     .hero-btn { font-size: 1.9rem; padding: 16px 32px; }
     .facts-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ===== Login Form ===== */
+.login-section {
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 25px;
+    background: linear-gradient(to bottom, #fff8dc, #ffe4c4); /* eggy gradient */
+    border-radius: 15px;
+    border: 3px dashed #dc141e; /* chicken-red chaos */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.login-form h1 {
+    font-size: 2.5rem;
+    color: #dc141e;
+    text-shadow: 1px 1px 2px #ffa500;
+    margin-bottom: 20px;
+    transform: rotate(-1deg);
+}
+
+.login-form input[type="text"],
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 2px dashed #dc141e;
+    background-color: #fffaf0;
+    font-size: 1.1rem;
+    color: #2b1a0f;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: #ff4500;
+    background-color: #fff3cd;
+    transform: scale(1.02);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.login-form .btn.submit {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 28px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 2px dashed #dc141e;
+    background-color: #ffcc00;
+    color: #2b1a0f;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.login-form .btn.submit:hover {
+    transform: rotate(-2deg) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Optional fun chaos effect on input placeholders */
+.login-form input::placeholder {
+    font-style: italic;
+    color: #a0522d;
+}

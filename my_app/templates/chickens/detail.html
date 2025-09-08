@@ -41,53 +41,72 @@
     </div>
   </div>
 </section>
-<section class="escapes">
-  <div class="subsection-title">
-    <h2>Escape Attempts 🏃‍♂️🐓</h2>
-    
-    <img src="{% static 'images/chicken-ninja.png' %}" alt="A ninja chicken plotting" />
-    <img src="{% static 'images/chicken-tunnel.png' %}" alt="A chicken digging a tunnel" />
-    <img src="{% static 'images/chicken-helicopter.png' %}" alt="A chicken trying to fly a toy helicopter" />
+<div class="escape and">
+  <section class="escapes">
+    <div class="subsection-title">
+      <h2>Escape Attempts 🏃‍♂️🐓</h2>
+      
+      <img src="{% static 'images/chicken-ninja.png' %}" alt="A ninja chicken plotting" />
+      <img src="{% static 'images/chicken-tunnel.png' %}" alt="A chicken digging a tunnel" />
+      <img src="{% static 'images/chicken-helicopter.png' %}" alt="A chicken trying to fly a toy helicopter" />
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Date & Time</th>
+          <th>Method</th>
+          <th>Outcome</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for attempt in chicken.escapeattempt_set.all %}
+          <tr>
+            <td>{{ attempt.date }}</td>
+            <td>{{ attempt.method }}</td>
+            <td>
+              {% if attempt.success %}
+                ✅ Freedom! (at least until KFC finds out)
+              {% else %}
+                ❌ Epic Fail (back to the coop)
+              {% endif %}
+            </td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="3">
+              This chicken hasn’t tried escaping yet…  
+              (Or they’re just better at covering their tracks 🕵️‍♀️)
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+   <form action="{% url 'add-escape' chicken.id %}" method="post" class="escape-form">
+  {% csrf_token %}
+
+  <div class="form-group">
+    <label for="{{ escape_form.date.id_for_label }}">{{ escape_form.date.label }}</label>
+    {{ escape_form.date }}
   </div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Date & Time</th>
-        <th>Method</th>
-        <th>Outcome</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for attempt in chicken.escapeattempt_set.all %}
-        <tr>
-          <td>{{ attempt.date }}</td>
-          <td>{{ attempt.method }}</td>
-          <td>
-            {% if attempt.success %}
-              ✅ Freedom! (at least until KFC finds out)
-            {% else %}
-              ❌ Epic Fail (back to the coop)
-            {% endif %}
-          </td>
-        </tr>
-      {% empty %}
-        <tr>
-          <td colspan="3">
-            This chicken hasn’t tried escaping yet…  
-            (Or they’re just better at covering their tracks 🕵️‍♀️)
-          </td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+  <div class="form-group">
+    <label for="{{ escape_form.method.id_for_label }}">{{ escape_form.method.label }}</label>
+    {{ escape_form.method }}
+    <small class="help-text">How did this feathered genius think it would work?</small>
+  </div>
 
-  <form action="{% url 'add-escape' chicken.id %}" method="post">
-    {% csrf_token %}
-    {{ escape_form.as_p }}
-    <button type="submit" class="btn chaos">Log Another Escape 🚪🐔</button>
-  </form>
-</section>
+  <div class="form-group checkbox">
+    {{ escape_form.success }}
+    <label for="{{ escape_form.success.id_for_label }}">{{ escape_form.success.label }}</label>
+  </div>
+
+  <button type="submit" class="btn chaos">🚪🐔 Log Another Escape</button>
+</form>
+
+  </section>
+</div>
 
 
 {% endblock %}

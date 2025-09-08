@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}" />
+<link rel="stylesheet" href="{% static 'css/chicken-cult.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section class="cult-signup-container">
+
+  <div class="cult-intro">
+    <img src="{% static 'images/cultist-chicken.png' %}" alt="Cultist Chicken staring into thy soul" />
+    <div class="intro-text">
+      <h1>Welcome, Brave Soul 🐓</h1>
+      <p class="warning">
+        You are about to enter the sacred chicken lair. 
+        <span class="emphasis">Think twice before proceeding</span>—this is not your typical homework. 
+        But fear not, you’ve been invited to join the <span class="emphasis">Totally Not Suspicious Chicken Cult</span>!
+      </p>
+      <p class="invitation">
+        Come in, pledge your allegiance, and enjoy feathers, wisdom, and gentle judgment. 
+        Warning: some chickens judge hard, especially the one holding the candle.
+      </p>
+      <p class="homework-note">
+        P.S. Instructor, this homework is your chance to have a little fun for a change. Yes, you — don’t be shy, join the cult!
+      </p>
+    </div>
+  </div>
+
+  {% if error_message %}
+    <p class="error">{{ error_message }}</p>
+  {% endif %}
+
+  <form action="" method="post" class="cult-form" autocomplete="off">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <button type="submit" class="btn submit">I Dare Thee, Enter!</button>
+  </form>
+
+</section>
+
+
+{% endblock %}

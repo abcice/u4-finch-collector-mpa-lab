@@ -109,3 +109,144 @@ ul {
   color: #fff;
 }
 
+/* Escape form chaos styling */
+.escape-form {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff3cd; /* eggy yellow */
+  border: 2px dashed #f4c542;
+  border-radius: 12px;
+}
+
+.escape-form .form-group {
+  margin-bottom: 15px;
+}
+
+.escape-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #d9534f; /* chaotic red */
+}
+
+.escape-form input[type="text"],
+.escape-form input[type="date"],
+.escape-form input[type="datetime-local"] {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #f4c542;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fffbe6;
+}
+
+.escape-form input[type="text"]:focus,
+.escape-form input[type="date"]:focus,
+.escape-form input[type="datetime-local"]:focus {
+  outline: none;
+  border-color: #5bc0de;
+  background-color: #eaf9ff;
+}
+
+.escape-form .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.escape-form .help-text {
+  font-size: 0.85rem;
+  color: #777;
+  font-style: italic;
+}
+/* Escape Attempts section */
+.escapes {
+  width: 90%;
+  margin: 25px auto;
+  padding: 20px;
+  border: 3px dotted #d9534f; /* chaotic red */
+  border-radius: 15px;
+  background-color: #fff8dc; /* slightly eggy beige */
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.escapes .subsection-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.escapes h2 {
+  font-size: 2.2rem;
+  margin-right: 10px;
+  color: #d9534f;
+  text-shadow: 1px 1px #f4c542; /* a tiny chaotic glow */
+}
+
+.escapes img {
+  height: 55px;
+  margin: 0 8px;
+  transform: rotate(-5deg);
+  transition: transform 0.3s ease-in-out;
+}
+.escapes img:hover {
+  transform: rotate(5deg) scale(1.1);
+}
+
+/* Escape attempts table */
+.escapes table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.escapes th {
+  background-color: #f4c542;
+  color: #000;
+  padding: 10px;
+  font-size: 1.1rem;
+  border-bottom: 2px solid #d9534f;
+}
+
+.escapes td {
+  padding: 8px;
+  border-bottom: 1px dashed #aaa;
+  font-size: 1rem;
+}
+
+.escapes tr:nth-child(even) {
+  background-color: #fffbe6;
+}
+
+.escapes tr:hover {
+  background-color: #ffe0b3;
+  transform: scale(1.01);
+  transition: 0.2s;
+}
+
+/* Empty state */
+.escapes td[colspan="3"] {
+  font-style: italic;
+  color: #777;
+  padding: 15px;
+}
+
+/* Chaos button inside escape section */
+.btn.chaos {
+  display: inline-block;
+  margin-top: 15px;
+  background-color: #5bc0de; /* fun blue */
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s, background-color 0.2s;
+}
+.btn.chaos:hover {
+  background-color: #31b0d5;
+  transform: rotate(-3deg) scale(1.08);
+}

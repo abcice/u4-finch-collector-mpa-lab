@@ -24,12 +24,13 @@
             <div class="card-image">
                 <img src="{% static 'images/angry-chicken.png' %}" alt="Chicken doing nothing useful" />
             </div>
+            </a>
             <div class="card-text">
                 <h2>{{ chicken.name }}</h2>
                 <p>{% if chicken.age > 0 %}A {{ chicken.age }} year old {{ chicken.breed }} (probably plotting something).{% else %}An innocent baby chick pretending to be cute.{% endif %}</p>
                 <p class="description">{{ chicken.description }}</p>
             </div>
-        </a>
+        
     </div>
     {% endfor %}
 </section>

@@ -2,6 +2,13 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Chicken
+from django.views.generic import ListView, DetailView # add these 
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
+from .forms import EscapeForm
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # Define the home view function
@@ -39,3 +46,12 @@ class ChickenUpdate(UpdateView):
 class ChickenDelete(DeleteView):
     model = Chicken
     success_url = '/chickens/'
+
+# @login_required
+def add_escape(request, chicken_id):
+    form = EscapeForm(request.POST)
+    if form.is_valid():
+        new_escape = form.save(commit=False)
+        new_escape.chicken_id = chicken_id
+        new_escape.save()
+    return redirect('chicken-detail', chicken_id=chicken_id)
